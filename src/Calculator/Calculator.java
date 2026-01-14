@@ -5,14 +5,17 @@ import java.util.List;
 
 public class Calculator {
 
-    // 속성
-    // 연산 결과를 저장하는 컬렉션 타입 필드
-    List<Integer> list = new ArrayList<>();
+    // 1. 속성
 
-    // 생성자
+    // 캡슐화
+    // 연산 결과를 저장하는 컬렉션 타입 필드
+    private List<Integer> results = new ArrayList<>();
+
+
+    // 2. 생성자
     public Calculator() {}
 
-    // 기능
+    // 3. 기능
     public int calculate(int num1, int num2, char operator) {
         int result = 0;
 
@@ -38,10 +41,20 @@ public class Calculator {
                 return 0;
         }
         // 연산 결과를 컬렉션에 저장
-        list.add(result);
+        results.add(result);
 
         // 결과 반환
         return result;
+    }
+
+    // getter
+    public List<Integer> getList() {
+        return results;
+    }
+
+    // setter
+    public void setList(List<Integer> list) {
+        this.results = list;
     }
 
 }

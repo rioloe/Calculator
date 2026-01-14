@@ -11,8 +11,10 @@ public class App {
         // Calculator 객체 생성
         Calculator calculator = new Calculator();
 
+        boolean run = true;
+
         // 반복
-        while (true) {
+        while (run) {
 
             // 정수 입력 받기
             System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -30,6 +32,9 @@ public class App {
 
             // 연산 결과 출력
             System.out.println("결과: " + result);
+
+            // 간접 접근
+            System.out.println("누적 결과: " + calculator.getList());
 
             // 종료 여부 확인
             System.out.println("더 계산하시겠습니까? (exit 입력시 종료)");
