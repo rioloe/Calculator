@@ -47,14 +47,27 @@ public class Calculator {
         return result;
     }
 
-    // getter
-    public List<Integer> getList() {
-        return results;
+    // getter: 방어적 복사
+    public List<Integer> getResults() {
+        return new ArrayList<>(results);
     }
 
-    // setter
-    public void setList(List<Integer> list) {
-        this.results = list;
+    // setter: 초기화 용도
+    public void resetResults(List<Integer> newResults) {
+        if (newResults == null) {
+            return;
+        }
+        results.clear();
+        results.addAll(newResults);
+    }
+
+    // 가장 오래된 결과 삭제
+    public void removeResult() {
+        if (results.isEmpty()) {
+            System.out.println("삭제할 결과가 없습니다");
+            return;
+        }
+        results.remove(0);
     }
 
 }

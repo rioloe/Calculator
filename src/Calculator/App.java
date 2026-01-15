@@ -34,13 +34,16 @@ public class App {
             System.out.println("결과: " + result);
 
             // 간접 접근
-            System.out.println("누적 결과: " + calculator.getList());
+            System.out.println("누적 결과: " + calculator.getResults());
 
             // 종료 여부 확인
-            System.out.println("더 계산하시겠습니까? (exit 입력시 종료)");
+            System.out.println("더 계산하시겠습니까? (exit 입력시 종료, remove 입력시 삭제)");
             String command = sc.next();
 
-            if (command.equals("exit")) {
+            if (command.equals("remove")) {
+                calculator.removeResult();
+                System.out.println("삭제 후 누적 결과: " + calculator.getResults());
+            } else if (command.equals("exit")) {
                 System.out.println("프로그램을 종료");
                 break;
             }
